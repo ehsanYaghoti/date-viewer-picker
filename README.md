@@ -5,10 +5,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, install packages :
 
 ```
-  npm install
+npm install
 ```
 
-second, run the development serverrun or run storybook workshop :
+second, run the development server or run storybook workshop :
 
 ```bash
 npm run storybook
