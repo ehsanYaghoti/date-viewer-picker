@@ -19,7 +19,7 @@ import calendar, {
     WEEK_DAYS_Labels_Type_2,
     converJTG,
 
-} from "@/helpers/calenderJalily";
+} from "@/helpers/calenderJalaaly";
 
 // import components
 import ToolTipItem from '../other/TooltipItem'; 
@@ -257,11 +257,6 @@ export const DateViewerJalaali = ({
 
     const disableChosenDays = (date : string[] , dates = chosenDatesDisable) => {
 
-        // const utcOfToday = Date.UTC(+today[0] , (+today[1] -1) , +today[2])
-        // const utcOfThisDate = Date.UTC(+date[0] , (+date[1] -1) , +date[2])
-
-        // console.log(utcOfThisDate < utcOfToday)
-
         if(dates.some(element => isSameDay(date , element))){
             return true 
         }
@@ -449,3 +444,6 @@ export const DateViewerJalaali = ({
         </div >
     )
 }
+
+
+

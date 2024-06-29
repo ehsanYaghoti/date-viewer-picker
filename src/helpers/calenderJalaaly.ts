@@ -212,7 +212,7 @@ export const getMonthDays = (month : number = THIS_MONTH , year : number = THIS_
 }
 
 // (int) First day of the month for a given year from 1 - 7
-// 0 => Saturday(شنبه) ,  7 => friday(جمعه)
+// 1 => Saturday(شنبه) ,  7 => friday(جمعه)
 export const getMonthFirstDay = (month : number = THIS_MONTH  , year : number = THIS_YEAR) => {
   
   const mm =  month < 10 ? `0${month}` : month
@@ -379,3 +379,4 @@ export default (month = THIS_MONTH, year = THIS_YEAR) => {
   return [ ...prevMonthDates, ...thisMonthDates, ...nextMonthDates ];
 
 }
+

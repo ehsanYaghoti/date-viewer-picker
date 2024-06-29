@@ -1,7 +1,7 @@
 import { Meta , StoryObj } from '@storybook/react';
 
 import { DateViewerJalaali } from './dateViewerJalaaly';
-import { arrayShamsiDate, arrayShamsiDatewithMIndex } from '@/helpers/calenderJalily';
+import { arrayShamsiDate, arrayShamsiDatewithMIndex } from '@/helpers/calenderJalaaly';
 
 
 const meta  : Meta<typeof DateViewerJalaali> = {

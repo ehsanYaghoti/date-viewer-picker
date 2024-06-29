@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import consts and modules
 import { DateViewerJalaali } from "./dateViewerJalaaly";
 
-import { arrayShamsiDate } from "@/helpers/calenderJalily";
+import { arrayShamsiDate } from "@/helpers/calenderJalaaly";
 
 // import types
 import { ShamsiFreedays } from "@/contracts/calendarJalaaly";
