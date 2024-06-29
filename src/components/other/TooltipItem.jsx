@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Button, Tooltip } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const TooltipItem = (props) => {
+const TooltipItem = ({  id ,  toolTipLabel , index }) => {
 
-  const {  id ,  toolTipLabel , index } = props;
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const toggle = () => setTooltipOpen(!tooltipOpen);

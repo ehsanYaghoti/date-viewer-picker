@@ -18,6 +18,7 @@ import calendar, {
     WEEK_DAYS_Labels,
     WEEK_DAYS_Labels_Type_2,
     converJTG,
+    showMonthsAndDaysOfYear,
 
 } from "@/helpers/calenderJalaaly";
 
@@ -71,14 +72,14 @@ interface Props {
     disabledDaysFontSize ?: number
     /** style disabled Days background color  */
     disabledDaysBackgroundColor ?: string
-
+    /** style days not in month color text */
     notInMonthDaysTextColor ?: string
 }
 
 /** date viewer jalaaly */
 export const DateViewerJalaali = ({ 
     date = arrayShamsiDate  , 
-    onDateChanged = (arrayShamsiDate) => {console.log(arrayShamsiDate)},
+    onDateChanged = (arrayShamsiDate) => {console.log('onDatechange from component')},
     isShowMonthAndYear = true,
     isClickableDates = true,
     weekDaysLabels = WEEK_DAYS_Labels,
@@ -165,7 +166,8 @@ export const DateViewerJalaali = ({
 
         const calendarMonth =  month || +current?.[1]
         const calendarYear = year || +current?.[0]
-        
+
+        console.log(showMonthsAndDaysOfYear(calendarYear))      
         return calendar(calendarMonth , calendarYear)        
     }
 
@@ -244,8 +246,6 @@ export const DateViewerJalaali = ({
 
         const utcOfToday = Date.UTC(+today[0] , (+today[1] -1) , +today[2])
         const utcOfThisDate = Date.UTC(+date[0] , (+date[1] -1) , +date[2])
-
-        console.log(utcOfThisDate < utcOfToday)
 
         if(utcOfThisDate < utcOfToday){
             return true 
@@ -375,6 +375,7 @@ export const DateViewerJalaali = ({
 
 
     return (
+        <>
         <div className=" w-[500px] " >
 
         {
@@ -395,7 +396,7 @@ export const DateViewerJalaali = ({
                     </button>
                     <span className="w-fit" >choosed many dates :</span>
                     <div className=" w-[500px] h-fit flex   flex-wrap " >
-                        {manyDateState.map(date => <span className="mx-2 my-1 w-fit" >{date?.current?.join('/')}</span> )}
+                        {manyDateState.map((date , index) => <span key={index} className="mx-2 my-1 w-fit" >{date?.current?.join('/')}</span> )}
                     </div>
                 </div> 
             </>        
@@ -403,7 +404,7 @@ export const DateViewerJalaali = ({
 
 
 
-        {/* Calendar Container */}
+        {/* Calendar  Container */}
         <div className="flex flex-col w-[500px] border-2 border-solid border-blue-600 rounded-md text-slate-700 font-sans" dir="rtl" >
             { isShowMonthAndYear && renderMonthAndyear() }
             
@@ -442,6 +443,7 @@ export const DateViewerJalaali = ({
         }
 
         </div >
+        </>
     )
 }
 

@@ -1,13 +1,13 @@
 import { Meta , StoryObj   } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { DateViewerJalaali } from './dateViewerJalaaly';
+import { DateViewerYearJalaali } from './dateViewerYearJalaaly';
 import { arrayShamsiDate, arrayShamsiDatewithMIndex } from '@/helpers/calenderJalaaly';
 import { useState } from 'react';
 
 
-const meta  : Meta<typeof DateViewerJalaali> = {
-    title : 'Components/Date/Shamsi/DateViewerJalaali',
-    component : DateViewerJalaali,
+const meta  : Meta<typeof DateViewerYearJalaali> = {
+    title : 'Components/Date/Shamsi/DateViewer Year Jalaali',
+    component : DateViewerYearJalaali,
     parameters : {
         backgrounds : {
             default : 'light'
@@ -39,7 +39,7 @@ const meta  : Meta<typeof DateViewerJalaali> = {
     args: { onDateChanged : fn() },
 }
 
-type Story = StoryObj<typeof DateViewerJalaali>
+type Story = StoryObj<typeof DateViewerYearJalaali>
 
 export default meta;
 
@@ -49,59 +49,5 @@ export const Primary : Story = {
         onDateChanged : function( date ) { 
             console.log('onDateChangeFromstoryFile' , date) 
         }
-    }
-}
-
-// export const SetFUnctionality  = (args) => {
-
-//     const [changeDate , onDateChange] = useState()
-
-//     return <DateViewerJalaali {...args}  />
-// }
-
-export const ShowMonthAndYear : Story = {
-    args  : {
-        isShowMonthAndYear : false
-    }
-}
-
-export const IsClickableDays : Story = {
-    args  : {
-        isClickableDates : false
-    }
-}
-
-export const WeekDaysLables : Story = {
-    args  : {
-        weekDaysLabels2 : true
-    }
-}
-
-export const DisableDaysBefore : Story = {
-    args  : {
-        isDisableDaysBefore : true
-    }
-}
-
-export const ChosenDatesDisable : Story = {
-    args  : {
-        chosenDatesDisable : [['1403', '4' , '6'] , ['1403', '4' , '7']] 
-    }
-}
-
-export const Styles : Story = {
-    args  : {
-        weekDayTextColor : 'blue' ,
-        weekDayFontSize : 12 ,
-        monthTextColor : 'blue' ,
-        monthFontSize : 18 ,
-        yearTextColor : 'blue' ,
-        yearFontSize : 18 ,
-        daysTextColor : 'text-blue-500' ,
-        daysFontSize : 18 ,
-        disabledDaysTextColor : 'white' ,
-        disabledDaysFontSize : 18 ,
-        disabledDaysBackgroundColor : '#A9A9A9',
-        notInMonthDaysTextColor : 'text-slate-200'
     }
 }
